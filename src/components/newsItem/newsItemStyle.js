@@ -1,6 +1,5 @@
-import React from "react";
 import styled from "styled-components";
-const NewsItemBlock = styled.div`
+export const NewsItemBlock = styled.div`
   display: flex;
   border: 2px solid black;
   padding: 16px;
@@ -38,32 +37,6 @@ const NewsItemBlock = styled.div`
     }
   }
   & + & {
-    margin-top: 3rem;
+    margin-top: 4rem;
   }
 `;
-
-const NewsItem = ({ article }) => {
-  const { title, description, url, urlToImage } = article;
-
-  return (
-    <NewsItemBlock>
-      {urlToImage && (
-        <div className="thumbnail">
-          <a href={url}>
-            <img src={urlToImage} alt="thumbnail" />
-          </a>
-        </div>
-      )}
-      <div className="contents">
-        <h2>
-          <a href={url} target="_blank" rel="noopener noreferrer">
-            {title}
-          </a>
-        </h2>
-        <p>{description}</p>
-      </div>
-    </NewsItemBlock>
-  );
-};
-
-export default NewsItem;
